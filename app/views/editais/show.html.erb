@@ -31,5 +31,6 @@
   </ul>
 </p>
 
-<%= link_to 'Edit', edit_edital_path(@edital) %> |
-<%= link_to 'Back', editais_path %>
+<%= link_to 'Adicionar novo arquivo', new_edital_documento_path(@edital) %> |
+<%= link_to t('navigation.edit'), edit_edital_path(@edital) %> |
+<%= link_to t('navigation.back'), editais_path %>

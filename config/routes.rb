@@ -1,5 +1,7 @@
 Editais::Application.routes.draw do
-  resources :editais
+  resources :editais do
+    resources :documentos, :only => [:new, :edit, :create, :update, :destroy]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,6 @@
-<h1>Editing edital</h1>
+<h1>Alterando edital <%= @edital.nome %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @edital %> |
-<%= link_to 'Back', editais_path %>
+<%= link_to t('navigation.show'), @edital %> |
+<%= link_to t('navigation.back'), editais_path %>

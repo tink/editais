@@ -1,10 +1,10 @@
-<h1>Listing editais</h1>
+<h1>Editais</h1>
 
 <table>
   <tr>
     <th>Nome</th>
     <th>Resumo</th>
-    <th>Data publicacao</th>
+    <th>Data publicação</th>
     <th>Data limite</th>
     <th></th>
     <th></th>
@@ -15,15 +15,15 @@
   <tr>
     <td><%= edital.nome %></td>
     <td><%= edital.resumo %></td>
-    <td><%= edital.data_publicacao %></td>
-    <td><%= edital.data_limite %></td>
-    <td><%= link_to 'Show', edital %></td>
-    <td><%= link_to 'Edit', edit_edital_path(edital) %></td>
-    <td><%= link_to 'Destroy', edital, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= l edital.data_publicacao %></td>
+    <td><%= l edital.data_limite %></td>
+    <td><%= link_to t('navigation.show'), edital %></td>
+    <td><%= link_to t('navigation.edit'), edit_edital_path(edital) %></td>
+    <td><%= link_to t('navigation.destroy'), edital, :confirm => t('navigation.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Edital', new_edital_path %>
+<%= link_to 'Novo edital', new_edital_path %>
