@@ -1,6 +1,7 @@
 Editais::Application.routes.draw do
-  resources :editais do
-    resources :documentos, :only => [:new, :edit, :create, :update, :destroy]
+  resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do
+    resources :documentos,
+      :only => [:new, :edit, :create, :update, :destroy], :path_names => { :new => 'novo', :edit => 'editar'}
   end
 
   # The priority is based upon order of creation:
