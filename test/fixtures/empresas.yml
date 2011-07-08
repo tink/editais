@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  razao_social: MyString
+  email: test@test.com
+  telefone_1: MyString
+  telefone_2: MyString
+  endereco: MyString
+  responsavel: MyString
+  cnpj: MyString
+
+two:
+  razao_social: MyString
+  email: test@test.com
+  telefone_1: MyString
+  telefone_2: MyString
+  endereco: MyString
+  responsavel: MyString
+  cnpj: MyString

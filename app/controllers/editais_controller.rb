@@ -1,4 +1,6 @@
 class EditaisController < ApplicationController
+  before_filter :verificar_empresa, :only => :show
+
   # GET /editais
   # GET /editais.xml
   def index
@@ -18,6 +20,13 @@ class EditaisController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @edital }
+    end
+  end
+
+  protected
+  def verificar_empresa
+    if session[:empresa_id].blank?
+      redirect_to autenticar_empresas_url(:e => params[:id])
     end
   end
 end

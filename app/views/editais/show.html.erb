@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @edital.nome %>
+</p>
+
+<p>
+  <b>Resumo:</b>
+  <%= @edital.resumo %>
+</p>
+
+<p>
+  <b>Data publicação:</b>
+  <%= @edital.data_publicacao %>
+</p>
+
+<p>
+  <b>Data limite:</b>
+  <%= @edital.data_limite %>
+</p>
+
+<p>
+  <b>Arquivos</b>
+  <ul>
+  <% @edital.documentos.each do |documento| %>
+    <li>
+      <%= link_to "#{documento.nome} - #{l(documento.data_publicacao)}", documento.arquivo.url %>
+    </li>
+  <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Adicionar novo arquivo', new_admin_edital_documento_path(@edital) %> |
+<%= link_to t('navigation.edit'), edit_admin_edital_path(@edital) %> |
+<%= link_to t('navigation.back'), admin_editais_path %>

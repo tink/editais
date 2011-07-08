@@ -176,6 +176,11 @@ pt-BR:
         data_publicacao: Data publicação
       documento:
         data_publicacao: Data publicação
+      empresa:
+        cnpj: CNPJ
+        email: E-mail
+        responsavel: Responsável
+        razao_social: Razão Social
     errors:
       template:
         header:

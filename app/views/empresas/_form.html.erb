@@ -1,0 +1,46 @@
+<%= form_for(@empresa) do |f| %>
+  <%= hidden_field_tag :e, params[:e] %>
+  <% if @empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+      <% @empresa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :razao_social %><br />
+    <%= f.text_field :razao_social %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone_1 %><br />
+    <%= f.text_field :telefone_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone_2 %><br />
+    <%= f.text_field :telefone_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :responsavel %><br />
+    <%= f.text_field :responsavel %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br />
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,13 @@
 Editais::Application.routes.draw do
   root :to => "editais#index"
 
-  resources :editais, :only => :index
+  resources :editais, :only => [:index, :show]
+  resources :empresas, :only => [:new, :create], :path_names => { :new => 'nova' } do
+    collection do
+      get :autenticar
+      post :verificar
+    end
+  end
 
   namespace :admin do
     resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do

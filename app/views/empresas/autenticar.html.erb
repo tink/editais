@@ -1,0 +1,10 @@
+<h1>Informe o CNPJ da sua empresa</h1>
+<%= form_tag verificar_empresas_url(params.slice(:e)) do %>
+  <div class="field">
+    <%= label_tag :cnpj, 'CNPJ' %><br />
+    <%= text_field_tag :cnpj %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Buscar' %>
+  </div>
+<% end %>

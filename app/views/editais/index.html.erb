@@ -7,8 +7,6 @@
     <th>Data publicação</th>
     <th>Data limite</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @editais.each do |edital| %>
@@ -17,6 +15,7 @@
     <td><%= edital.resumo %></td>
     <td><%= l edital.data_publicacao %></td>
     <td><%= l edital.data_limite %></td>
+    <td><%= link_to 'Detalhes', edital %></td>
   </tr>
 <% end %>
 </table>
