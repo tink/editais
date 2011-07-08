@@ -1,0 +1,31 @@
+<h1>Listing editais</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Resumo</th>
+    <th>Descricao</th>
+    <th>Data publicacao</th>
+    <th>Data limite</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @editais.each do |edital| %>
+  <tr>
+    <td><%= edital.nome %></td>
+    <td><%= edital.resumo %></td>
+    <td><%= edital.descricao %></td>
+    <td><%= edital.data_publicacao %></td>
+    <td><%= edital.data_limite %></td>
+    <td><%= link_to 'Show', edital %></td>
+    <td><%= link_to 'Edit', edit_edital_path(edital) %></td>
+    <td><%= link_to 'Destroy', edital, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Edital', new_edital_path %>

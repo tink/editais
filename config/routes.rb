@@ -1,4 +1,6 @@
 Editais::Application.routes.draw do
+  resources :editais
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
