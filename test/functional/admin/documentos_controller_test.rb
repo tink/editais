@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DocumentosControllerTest < ActionController::TestCase
+class Admin::DocumentosControllerTest < ActionController::TestCase
   setup do
     @edital = editais(:one)
     @documento = documentos(:one)
@@ -18,7 +18,7 @@ class DocumentosControllerTest < ActionController::TestCase
       post :create, :edital_id => @edital.id, :documento => @documento.attributes
     end
 
-    assert_redirected_to(@edital)
+    assert_redirected_to(admin_edital_url(@edital))
   end
   test "should get edit" do
     get :edit, :edital_id => @edital.id, :id => @documento.to_param
@@ -28,7 +28,7 @@ class DocumentosControllerTest < ActionController::TestCase
   test "should update documento" do
     skip
     put :update, :edital_id => @edital.id, :id => @documento.to_param, :documento => @documento.attributes
-    assert_redirected_to(@edital)
+    assert_redirected_to(admin_edital_url(@edital))
   end
 
   test "should destroy documento" do
@@ -36,6 +36,6 @@ class DocumentosControllerTest < ActionController::TestCase
       delete :destroy, :edital_id => @edital.id, :id => @documento.to_param
     end
 
-    assert_redirected_to(@edital)
+    assert_redirected_to(admin_edital_url(@edital))
   end
 end

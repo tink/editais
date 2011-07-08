@@ -1,8 +1,8 @@
-class DocumentosController < ApplicationController
+class Admin::DocumentosController < ApplicationController
   before_filter :load_edital
 
-  # GET /documentos/new
-  # GET /documentos/new.xml
+  # GET /admin/documentos/new
+  # GET /admin/documentos/new.xml
   def new
     @documento = @edital.documentos.build
 
@@ -12,19 +12,19 @@ class DocumentosController < ApplicationController
     end
   end
 
-  # GET /documentos/1/edit
+  # GET /admin/documentos/1/edit
   def edit
     @documento = @edital.documentos.find(params[:id])
   end
 
-  # POST /documentos
-  # POST /documentos.xml
+  # POST /admin/documentos
+  # POST /admin/documentos.xml
   def create
     @documento = Documento.new(params[:documento])
 
     respond_to do |format|
       if @documento.save
-        format.html { redirect_to(@edital, :notice => 'Documento was successfully created.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Documento was successfully created.') }
         format.xml  { render :xml => @documento, :status => :created, :location => @documento }
       else
         format.html { render :action => "new" }
@@ -33,14 +33,14 @@ class DocumentosController < ApplicationController
     end
   end
 
-  # PUT /documentos/1
-  # PUT /documentos/1.xml
+  # PUT /admin/documentos/1
+  # PUT /admin/documentos/1.xml
   def update
     @documento = @edital.documentos.find(params[:id])
 
     respond_to do |format|
       if @documento.update_attributes(params[:documento])
-        format.html { redirect_to(@edital, :notice => 'Documento was successfully updated.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Documento was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -49,14 +49,14 @@ class DocumentosController < ApplicationController
     end
   end
 
-  # DELETE /documentos/1
-  # DELETE /documentos/1.xml
+  # DELETE /admin/documentos/1
+  # DELETE /admin/documentos/1.xml
   def destroy
     @documento = @edital.documentos.find(params[:id])
     @documento.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@edital) }
+      format.html { redirect_to(admin_edital_url(@edital)) }
       format.xml  { head :ok }
     end
   end

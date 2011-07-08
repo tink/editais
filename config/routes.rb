@@ -1,7 +1,14 @@
 Editais::Application.routes.draw do
-  resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do
-    resources :documentos,
-      :only => [:new, :edit, :create, :update, :destroy], :path_names => { :new => 'novo', :edit => 'editar'}
+  root :to => "editais#index"
+
+  resources :editais, :only => :index
+
+  namespace :admin do
+    resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do
+      resources :documentos,
+        :only => [:new, :edit, :create, :update, :destroy],
+        :path_names => { :new => 'novo', :edit => 'editar'}
+    end
   end
 
   # The priority is based upon order of creation:

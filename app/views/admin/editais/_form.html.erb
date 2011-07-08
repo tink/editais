@@ -1,30 +1,33 @@
-<%= form_for([@edital, @documento], :html => {:multipart => true}) do |f| %>
-  <% if @documento.errors.any? %>
+<%= form_for([:admin, @edital]) do |f| %>
+  <% if @edital.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+      <h2><%= pluralize(@edital.errors.count, "error") %> prohibited this edital from being saved:</h2>
 
       <ul>
-      <% @documento.errors.full_messages.each do |msg| %>
+      <% @edital.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <%= f.hidden_field :edital_id %>
   <div class="field">
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :resumo %><br />
+    <%= f.text_area :resumo %>
   </div>
   <div class="field">
     <%= f.label :data_publicacao %><br />
     <%= f.date_select :data_publicacao %>
   </div>
   <div class="field">
-    <%= f.label :arquivo %><br />
-    <%= f.file_field :arquivo %>
-    <%= f.hidden_field :arquivo_cache %>
+    <%= f.label :data_limite %><br />
+    <%= f.date_select :data_limite %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

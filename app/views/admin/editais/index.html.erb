@@ -17,6 +17,13 @@
     <td><%= edital.resumo %></td>
     <td><%= l edital.data_publicacao %></td>
     <td><%= l edital.data_limite %></td>
+    <td><%= link_to t('navigation.show'), admin_edital_path(edital) %></td>
+    <td><%= link_to t('navigation.edit'), edit_admin_edital_path(edital) %></td>
+    <td><%= link_to t('navigation.destroy'), admin_edital_path(edital), :confirm => t('navigation.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+
+<br />
+
+<%= link_to 'Novo edital', new_admin_edital_path %>
