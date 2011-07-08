@@ -1,5 +1,4 @@
 class DownloadNotifier < ActionMailer::Base
-  default_url_options[:host] = "localhost:3000"
   default :from => "testes@tink.com.br"
 
   def ready_download(download)
