@@ -25,6 +25,7 @@ class EditaisController < ApplicationController
   # GET /editais/new.xml
   def new
     @edital = Edital.new
+    @edital.documentos.build
 
     respond_to do |format|
       format.html # new.html.erb

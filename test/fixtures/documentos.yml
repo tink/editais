@@ -2,12 +2,10 @@
 
 one:
   nome: MyString
-  resumo: MyText
+  arquivo: MyString
   data_publicacao: 2011-07-08
-  data_limite: 2011-07-08
 
 two:
   nome: MyString
-  resumo: MyText
+  arquivo: MyString
   data_publicacao: 2011-07-08
-  data_limite: 2011-07-08

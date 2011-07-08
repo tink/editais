@@ -3,7 +3,6 @@ class CreateEditais < ActiveRecord::Migration
     create_table :editais do |t|
       t.string :nome
       t.text :resumo
-      t.string :descricao
       t.date :data_publicacao
       t.date :data_limite
 

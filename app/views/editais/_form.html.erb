@@ -1,4 +1,4 @@
-<%= form_for(@edital) do |f| %>
+<%= form_for(@edital, :html => {:multipart => true}) do |f| %>
   <% if @edital.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@edital.errors.count, "error") %> prohibited this edital from being saved:</h2>
@@ -20,10 +20,6 @@
     <%= f.text_area :resumo %>
   </div>
   <div class="field">
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </div>
-  <div class="field">
     <%= f.label :data_publicacao %><br />
     <%= f.date_select :data_publicacao %>
   </div>
@@ -31,6 +27,22 @@
     <%= f.label :data_limite %><br />
     <%= f.date_select :data_limite %>
   </div>
+
+  <%= f.fields_for :documentos do |documento_form| %>
+    <div class="field">
+      <%= documento_form.label :nome %><br />
+      <%= documento_form.text_field :nome %>
+    </div>
+    <div class="field">
+      <%= documento_form.label :data_publicacao %><br />
+      <%= documento_form.date_select :data_publicacao %>
+    </div>
+    <div class="field">
+      <%= documento_form.file_field :arquivo %>
+      <%= documento_form.hidden_field :arquivo_cache %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

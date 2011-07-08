@@ -13,6 +13,6 @@ tmp/**/*
 tmp/*
 config/database.yml
 db/schema.rb
-public/system/*
+public/uploads/*
 .DS_Store
 **/.DS_Store
