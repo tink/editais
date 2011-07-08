@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  token: asdas0912asdj09sd0asd
+  empresa: one
+  documento: one
+
+two:
+  token: asdj198321j021123jjjjjjj
+  empresa: two
+  documento: two

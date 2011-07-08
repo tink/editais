@@ -12,7 +12,7 @@ class EditaisControllerTest < ActionController::TestCase
   end
 
   test "should show edital" do
-    get :show, :id => @edital.to_param
+    get :show, {:id => @edital.to_param}, {:empresa_id => empresas(:one)}
     assert_response :success
   end
 end

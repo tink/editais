@@ -9,6 +9,8 @@ Editais::Application.routes.draw do
     end
   end
 
+  resources :downloads, :only => [:create, :show]
+
   namespace :admin do
     resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do
       resources :documentos,

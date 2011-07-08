@@ -1,0 +1,7 @@
+Olá,
+
+Você solicitou o download do documento <%= @download.documento.nome %> referente ao edital <%= @download.documento.edital.nome %>.
+
+Acesse o link abaixo para baixar o edital:
+
+<%= download_url(@download.token) %>

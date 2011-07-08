@@ -15,7 +15,7 @@ class EmpresasControllerTest < ActionController::TestCase
     cnpj = '12345678901234'
     post :verificar, :cnpj => cnpj, :e => @edital.id
 
-    assert_redirected_to new_empresa_path, :empresa => {:cnpj => cnpj}
+    assert_redirected_to new_empresa_path(:e => @edital.id, :cnpj => cnpj)
   end
 
   test "post verificar should redirect to edital page if cnpj exists" do
@@ -34,6 +34,6 @@ class EmpresasControllerTest < ActionController::TestCase
       post :create, :e => @edital.id, :empresa => @empresa.attributes
     end
 
-    assert_redirected_to empresa_path(assigns(:empresa))
+    assert_redirected_to(@edital)
   end
 end
