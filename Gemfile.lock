@@ -30,6 +30,9 @@ GEM
     activesupport (3.0.9)
     ansi (1.3.0)
     arel (2.0.10)
+    brcpfcnpj (3.0.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     builder (2.1.2)
     carrierwave (0.5.4)
       activesupport (~> 3.0)
@@ -77,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brcpfcnpj
   carrierwave
   mysql2 (~> 0.2.6)
   rails (= 3.0.9)

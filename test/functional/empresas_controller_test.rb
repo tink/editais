@@ -31,7 +31,7 @@ class EmpresasControllerTest < ActionController::TestCase
 
   test "should create empresa" do
     assert_difference('Empresa.count') do
-      post :create, :e => @edital.id, :empresa => @empresa.attributes
+      post :create, :e => @edital.id, :empresa => @empresa.attributes.merge(:email => "test3@test.com", :cnpj => "66.864.642/0001-47")
     end
 
     assert_redirected_to(@edital)

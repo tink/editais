@@ -7,13 +7,13 @@ one:
   telefone_2: MyString
   endereco: MyString
   responsavel: MyString
-  cnpj: MyString
+  cnpj: 66.143.391/0001-01
 
 two:
   razao_social: MyString
-  email: test@test.com
+  email: test2@test.com
   telefone_1: MyString
   telefone_2: MyString
   endereco: MyString
   responsavel: MyString
-  cnpj: MyString
+  cnpj: 15.458.916/0001-67
