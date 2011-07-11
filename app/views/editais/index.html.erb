@@ -1,21 +1,23 @@
-<h1>Editais</h1>
-
 <table>
-  <tr>
-    <th>Nome</th>
-    <th>Resumo</th>
-    <th>Data publicação</th>
-    <th>Data limite</th>
-    <th></th>
-  </tr>
-
+  <caption>Editais Abertos</caption>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Resumo</th>
+      <th>Data publicação</th>
+      <th>Data limite</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @editais.each do |edital| %>
-  <tr>
-    <td><%= edital.nome %></td>
-    <td><%= edital.resumo %></td>
-    <td><%= l edital.data_publicacao %></td>
-    <td><%= l edital.data_limite %></td>
-    <td><%= link_to 'Detalhes', edital %></td>
-  </tr>
+    <tr>
+      <td><%= edital.nome %></td>
+      <td><%= edital.resumo %></td>
+      <td><%= l edital.data_publicacao %></td>
+      <td><%= l edital.data_limite %></td>
+      <td><%= link_to 'Detalhes', edital %></td>
+    </tr>
 <% end %>
+  </tbody>
 </table>
