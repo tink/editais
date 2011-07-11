@@ -91,15 +91,16 @@ h1#title {
 }
 
 h2#subtitle {
-  color: #BBB;
-  font-size: 20px;
+  color: #D1D1D1;
+  font-size: 16px;
   font-weight: bold;
-  line-height: 30px;
+  line-height: 23px;
 }
 
 #resumo {
-  color: #333;
+  color: #444;
   float: left;
+  font-size: 14px;
   width: 70%;
   line-height: 20px;
   padding-right: 15px;
