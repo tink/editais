@@ -1,10 +1,15 @@
+# encoding: UTF-8
+
 class EmpresasController < ApplicationController
   before_filter :load_edital
 
   # POST /empresas/verificar
   def verificar
-    empresa = Empresa.find_by_cnpj(params[:cnpj])
-    if empresa
+    
+    if !Cnpj.new(params[:cnpj]).valido?
+      flash[:error] = 'CNPJ informado não é válido'
+      redirect_to :action => :autenticar, :e => params[:e]
+    elsif empresa = Empresa.find_by_cnpj(params[:cnpj])
       liberar_acesso(empresa)
       redirect_to @edital
     else
@@ -32,7 +37,7 @@ class EmpresasController < ApplicationController
       if @empresa.save
         liberar_acesso(@empresa)
 
-        format.html { redirect_to(@edital, :notice => 'Empresa was successfully created.') }
+        format.html { redirect_to(@edital, :notice => 'Empresa criada com sucesso!') }
         format.xml  { render :xml => @empresa, :status => :created, :location => @empresa }
       else
         format.html { render :action => "new" }

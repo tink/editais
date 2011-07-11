@@ -1,8 +1,10 @@
+<%= javascript_include_tag 'maskedinput-1.1.2.pack', 'empresas/create' %>
+
 <%= form_for(@empresa) do |f| %>
   <%= hidden_field_tag :e, params[:e] %>
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+      <h2>Encontramos os seguintes erros ao tentar salvar a empresa:</h2>
 
       <ul>
       <% @empresa.errors.full_messages.each do |msg| %>

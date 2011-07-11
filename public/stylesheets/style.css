@@ -1,11 +1,24 @@
+body {
+  font-family: "Trebuchet MS", Helvetica, "Bitstream Vera Sans", Verdana, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+body, p, ol, ul, td {
+  font-size:   13px;
+  line-height: 15px;
+}
+
+
 #main {
   width: 100%;
   margin-top: 15px;
 }
+
 #cabecalho {
   border: 1px solid #e0e0e0;
   background-color: #f1f1f1;
-  font: 14px "Trebuchet MS", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+  font: 14px;
   margin-left: auto;
   margin-right: auto;
   width: 960px;
@@ -48,3 +61,94 @@
   width: 100%;
 }
 
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.flash-notice {
+  color: #6d9100;
+  padding: 0.7em 1em;
+  margin: 1em 1.5em;
+  background-color: #e5ffba;
+  font-weight: bold; }
+.flash-error, .flash-alert {
+  color: #9f1d20;
+  padding: 0.7em 1em;
+  margin: 1em 1.5em;
+  background-color: #ffb7bc;
+  font-weight: bold; }
+.flash-warning {
+  color: #ee9a00;
+  padding: 0.7em 1em;
+  margin: 1em 1.5em;
+  background-color: #fff1c0;
+  font-weight: bold; }
+
+h1#title {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+h2#subtitle {
+  color: #BBB;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+#resumo {
+  color: #333;
+  float: left;
+  width: 70%;
+  line-height: 20px;
+  padding-right: 15px;
+}
+
+#info {
+  border-left: 1px solid #CCC;
+  float: right;
+  width: 25%;
+  padding-left: 30px;
+}
+
+#info h3 {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 1px;
+}
+
+#info .date {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#files-title {
+  border-bottom: 3px solid #DDD;
+  padding-bottom: 5px;
+}
+
+#files .image-box {
+  float: left;
+  width: 25px;
+  padding-top: 6px;
+}
+
+#files li {
+  padding: 5px 0 5px 5px;
+  border-bottom: 1px solid #EEE;
+}
+
+#files a {
+  border: 0;
+  color: #379;
+}
+
+#files .date {
+  font-size: 10px;
+  margin: 0;
+}
+
+.clear {
+  clear: both;
+}

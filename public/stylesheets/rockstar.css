@@ -40,5 +40,4 @@ caption 			{font-weight: bold; font-size: 1.7em; text-align: left; margin: 0; pa
 
 td + td + td + td {white-space: nowrap;}
 td + td + td + td a:before {content:"\2193 ";}
-a[href^="http://"]:not([href*="http://icant.co.uk"])::after {content: "\2197"; }
 td + td + td + td a[href^="http://"]:not([href*="http://icant.co.uk"])::after {content: ""; }

@@ -1,34 +1,34 @@
-<p id="notice"><%= notice %></p>
+<h1 id='title'><%= @edital.nome %></h1>
 
-<p>
-  <b>Nome:</b>
-  <%= @edital.nome %>
-</p>
-
-<p>
-  <b>Resumo:</b>
+<div id='resumo'>
+  <h2 id='subtitle'>Informações</h2>
   <%= @edital.resumo %>
-</p>
+</div>
 
-<p>
-  <b>Data publicação:</b>
-  <%= @edital.data_publicacao %>
-</p>
+<div id="info">
+  <h3>Data de publicação</h3>
+  <span class="date"><%= l @edital.data_publicacao %></span>
 
-<p>
-  <b>Data limite:</b>
-  <%= @edital.data_limite %>
-</p>
+  <h3>Data limite</h3>
+  <span class="date"><%= l @edital.data_limite %></span>
 
-<p>
-  <b>Arquivos</b>
-  <ul>
+  <h3 id="files-title">Arquivos</h3>
+  <ul id="files">
   <% @edital.documentos.each do |documento| %>
     <li>
-      <%= link_to "#{documento.nome} - #{l(documento.data_publicacao)}", downloads_url(:d => documento.id), :method => :post %>
+      <div class="image-box">
+        <%= image_tag 'icons/document-invoice.png' %>
+      </div>
+      <div class="description-box">
+        <%= link_to documento.nome, downloads_url(:d => documento.id), :method => :post %>
+        <span class='date'><%= l(documento.data_publicacao) %></span>
+      </div>
     </li>
   <% end %>
   </ul>
-</p>
+</div>
 
+<div class="clear"></div>
 <%= link_to t('navigation.back'), editais_url %>
+
+

@@ -9,6 +9,8 @@ gem 'mysql2', '~> 0.2.6'
 
 gem 'brcpfcnpj'
 gem 'carrierwave'
+
+gem 'jquery-rails', '>= 1.0.12'
 # Use unicorn as the web server
 # gem 'unicorn'
 

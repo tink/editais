@@ -3,6 +3,6 @@ class DownloadNotifier < ActionMailer::Base
 
   def ready_download(download)
     @download = download
-    mail :to => download.empresa.email
+    mail :to => download.empresa.email, :subject => "Link para download do edital"
   end
 end
