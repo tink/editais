@@ -1,12 +1,11 @@
 h1 {
-  font-size: 40px;
   border-bottom: 3px solid #CCC;
   padding-bottom: 5px;
 }
 
 h2 {
   font-size: 25px;
-  margin: 10px 0 2px;
+  margin: 10px 0 8px;
 }
 
 h2 a, h2 a:visited {
@@ -23,4 +22,8 @@ p.date {
 p.resumo {
   color: #444;
   font-size: 12px;
+}
+
+#sidebar {
+  border-left: 1px solid #CCC;
 }

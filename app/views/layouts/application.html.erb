@@ -23,9 +23,17 @@
         <div id=flashes>
           <%= flash_message %>
         </div>
-        <div id=editais>
+        <div id=principal>
           <%= yield %>
         </div>
+        <div id=sidebar>
+          <% if current_empresa %>
+            <span id="acessando_como">Você está acessando como:</span>
+            <span id="empresa_atual"><%= current_empresa.cnpj %></span>
+          <% end %>
+          <%= yield :sidebar%>
+        </div>
+        <div class="clear"></div>
       </div>
       <div id=rodape>
         Editais Públicos é um serviço da tink! Para maiores informações entre em contato pelo e-mail editaispublicos@tink.com.br

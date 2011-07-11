@@ -1,5 +1,4 @@
 h1#title {
-  font-size: 40px;
   line-height: 40px;
 }
 
@@ -11,28 +10,20 @@ h2#subtitle {
 }
 
 #resumo {
-  color: #444;
-  float: left;
-  font-size: 14px;
-  width: 70%;
-  line-height: 20px;
-  padding-right: 15px;
+  line-height: 21px;
 }
-
-#info {
+#sidebar {
   border-left: 1px solid #CCC;
-  float: right;
-  width: 25%;
   padding-left: 30px;
 }
 
-#info h3 {
+#sidebar h3 {
   font-weight: bold;
   font-size: 15px;
   margin-bottom: 1px;
 }
 
-#info .date {
+#sidebar .date {
   display: block;
   margin-bottom: 10px;
 }

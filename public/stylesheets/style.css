@@ -29,15 +29,13 @@ p, ol, ul, td {
   font-size: 10px;
   color: #b0b0b0;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 50px auto 0;
+  padding: 10px 0;
   width: 960px;
-  margin-top: 50px;
 }
 #logo img {
   margin-left: 30px;
   margin-top: 20px;
-  width: 75%;
 }
 #logo {
   float: left;
@@ -56,12 +54,25 @@ p, ol, ul, td {
   width: 960px;
   clear: left;
 }
-#editais table {
+
+#principal {
+  float: left;
+  width: 65%;
+  padding-right: 15px;
+}
+
+#principal table {
   width: 100%;
 }
 
+#sidebar {
+  float: right;
+  width: 25%;
+  padding: 15px;
+}
+
 h1 {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -86,4 +97,11 @@ h1 {
 
 .clear {
   clear: both;
+}
+
+#empresa_atual {
+  font-family: arial;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

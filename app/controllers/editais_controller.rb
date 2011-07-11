@@ -25,7 +25,7 @@ class EditaisController < ApplicationController
 
   protected
   def verificar_empresa
-    if session[:empresa_id].blank?
+    unless current_empresa
       redirect_to autenticar_empresas_url(:e => params[:id])
     end
   end

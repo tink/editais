@@ -181,6 +181,7 @@ pt-BR:
         email: E-mail
         responsavel: Responsável
         razao_social: Razão Social
+        endereco: Endereço
     errors:
       template:
         header:

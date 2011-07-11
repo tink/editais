@@ -1,6 +1,13 @@
-<%= stylesheet_link_tag 'empresas/index' %>
+<%= stylesheet_link_tag 'editais/index' %>
+<%= content_for :sidebar do %>
+  <h2>Buscar editais</h2>
+  <%= form_tag({}) do %>
+    <%= text_field_tag :q %>
+    <%= submit_tag 'Buscar' %>
+  <% end %>
+<% end %>
 
-<h1>Editais abertos</h1>
+<h1>Editais em aberto</h1>
 <ul>
   <% @editais.each do |edital| %>
     <li>
