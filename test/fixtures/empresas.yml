@@ -7,7 +7,7 @@ one:
   telefone_2: MyString
   endereco: MyString
   responsavel: MyString
-  cnpj: 66.143.391/0001-01
+  cnpj: 12477448000180
 
 two:
   razao_social: MyString

@@ -11,15 +11,23 @@ class EmpresasControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "post verificar should redirect to new if cnpj is new" do
+  test "post verificar should redirect to autenticar if cnpj is invalid" do
     cnpj = '12345678901234'
+    post :verificar, :cnpj => cnpj, :e => @edital.id
+
+    assert_redirected_to autenticar_empresas_url(:e => @edital.id)
+    assert flash[:error]
+  end
+
+  test "post verificar should redirect to new if cnpj is new" do
+    cnpj = '89114351000137'
     post :verificar, :cnpj => cnpj, :e => @edital.id
 
     assert_redirected_to new_empresa_path(:e => @edital.id, :cnpj => cnpj)
   end
 
   test "post verificar should redirect to edital page if cnpj exists" do
-    post :verificar, :cnpj => @empresa.cnpj, :e => @edital.id
+    post :verificar, :cnpj => @empresa.cnpj.to_s, :e => @edital.id
 
     assert_redirected_to edital_url(@edital)
   end

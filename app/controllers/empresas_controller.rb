@@ -5,15 +5,19 @@ class EmpresasController < ApplicationController
 
   # POST /empresas/verificar
   def verificar
-    
-    if !Cnpj.new(params[:cnpj]).valido?
+    cnpj = params[:cnpj].to_s.gsub(/\D/, '')
+
+    if !Cnpj.new(cnpj).valido?
       flash[:error] = 'CNPJ informado não é válido'
       redirect_to :action => :autenticar, :e => params[:e]
-    elsif empresa = Empresa.find_by_cnpj(params[:cnpj])
-      liberar_acesso(empresa)
-      redirect_to @edital
     else
-      redirect_to :action => :new, :e => params[:e], :cnpj => params[:cnpj]
+      empresa = Empresa.find_by_cnpj(cnpj)
+      if empresa
+        liberar_acesso(empresa)
+        redirect_to @edital
+      else
+        redirect_to params.slice(:e, :cnpj).merge(:action => :new)
+      end
     end
   end
 

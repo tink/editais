@@ -17,7 +17,7 @@ class DownloadNotifierTest < ActionMailer::TestCase
   test "ready_download" do
     mail = DownloadNotifier.ready_download(@download)
 
-    assert_equal "Ready download", mail.subject
+    assert_equal "Link para download do edital", mail.subject
     assert_equal ["test@test.com"], mail.to
     assert_equal ["testes@tink.com.br"], mail.from
 
