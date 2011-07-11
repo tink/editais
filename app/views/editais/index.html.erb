@@ -1,23 +1,12 @@
-<table>
-  <caption>Editais Abertos</caption>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Resumo</th>
-      <th>Data publicação</th>
-      <th>Data limite</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<% @editais.each do |edital| %>
-    <tr>
-      <td><%= edital.nome %></td>
-      <td><%= edital.resumo %></td>
-      <td><%= l edital.data_publicacao %></td>
-      <td><%= l edital.data_limite %></td>
-      <td><%= link_to 'Detalhes', edital %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<%= stylesheet_link_tag 'empresas/index' %>
+
+<h1>Editais abertos</h1>
+<ul>
+  <% @editais.each do |edital| %>
+    <li>
+      <h2><%= link_to edital.nome, edital %></h2>
+      <p class="date"><%= l edital.data_publicacao %> até <%= l edital.data_limite %></p>
+      <p class="resumo"><%= edital.resumo %></p>
+    </li>
+  <% end %>
+</ul>
