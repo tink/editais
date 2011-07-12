@@ -171,6 +171,8 @@ pt-BR:
 
   # ActiveRecord
   activerecord:
+    models:
+      instituicao: Instituição
     attributes:
       edital:
         data_publicacao: Data publicação
