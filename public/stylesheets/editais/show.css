@@ -1,5 +1,9 @@
-h1#titulo {
+#titulo {
   line-height: 40px;
+}
+
+#titulo a, #titulo a:visited {
+  color: #c4110b;
 }
 
 h2#subtitulo {
@@ -24,10 +28,6 @@ h2#subtitulo {
 #resumo {
   line-height: 21px;
   margin-top: 20px;
-}
-#sidebar {
-  border-left: 1px solid #CCC;
-  padding-left: 30px;
 }
 
 #sidebar h3 {
@@ -59,7 +59,7 @@ h2#subtitulo {
 
 #files li {
   padding: 5px 0 5px 5px;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #E4E4E4;
 }
 
 #files a {

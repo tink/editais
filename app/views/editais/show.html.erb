@@ -28,7 +28,7 @@
   </ul>
 <% end %>
 
-<h1 id='title'><%= @edital.nome %></h1>
+<h1 id='titulo'><%= link_to 'editais', editais_url %> / <%= @edital.nome %></h1>
 <div id='palavras-chave'>
   <span id='palavras-chave-label'>Palavras chave:</span> <%= @edital.tag_list %>
 </div>

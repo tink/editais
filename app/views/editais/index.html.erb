@@ -1,10 +1,12 @@
 <%= stylesheet_link_tag 'editais/index' %>
 <%= content_for :sidebar do %>
-  <h2>Buscar editais</h2>
-  <%= form_tag({}) do %>
-    <%= text_field_tag :q %>
-    <%= submit_tag 'Buscar' %>
-  <% end %>
+  <div id="busca">
+    <h2>Buscar editais</h2>
+    <%= form_tag({}) do %>
+      <%= text_field_tag :q %>
+      <%= submit_tag 'Buscar' %>
+    <% end %>
+  </div>
 <% end %>
 
 <h1>Editais em aberto</h1>
