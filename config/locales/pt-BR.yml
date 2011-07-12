@@ -173,6 +173,7 @@ pt-BR:
   activerecord:
     models:
       instituicao: Instituição
+      user: Usuário
     attributes:
       edital:
         data_publicacao: Data publicação
@@ -184,6 +185,9 @@ pt-BR:
         responsavel: Responsável
         razao_social: Razão Social
         endereco: Endereço
+      user:
+        email: E-mail
+        password: Senha
     errors:
       template:
         header:
