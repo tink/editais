@@ -7,6 +7,7 @@ gem 'rails', '3.0.9'
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 gem 'brcpfcnpj'
