@@ -35,7 +35,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     builder (2.1.2)
-    carrierwave (0.5.4)
+    carrierwave (0.5.5)
       activesupport (~> 3.0)
     devise (1.4.2)
       bcrypt-ruby (~> 2.1.2)
