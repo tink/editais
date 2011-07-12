@@ -26,7 +26,13 @@ class EmpresasControllerTest < ActionController::TestCase
     assert_redirected_to new_empresa_path(:e => @edital.id, :cnpj => cnpj)
   end
 
-  test "post verificar should redirect to edital page if cnpj exists" do
+  test "post verificar should redirect to editais page if cnpj exists" do
+    post :verificar, :cnpj => @empresa.cnpj.to_s
+
+    assert_redirected_to editais_url
+  end
+
+  test "post verificar should redirect to edital page if cnpj exists and there is a current edital" do
     post :verificar, :cnpj => @empresa.cnpj.to_s, :e => @edital.id
 
     assert_redirected_to edital_url(@edital)

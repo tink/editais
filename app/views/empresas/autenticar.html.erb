@@ -1,6 +1,6 @@
 <%= javascript_include_tag 'maskedinput-1.1.2.pack', 'empresas/auth' %>
 <h1>Autorização</h1>
-<p>Para poder baixar o edital informe o CNPJ da sua empresa abaixo:</p>
+<p>Para poder baixar os editais informe o CNPJ da sua empresa abaixo:</p>
 <%= form_tag verificar_empresas_url(params.slice(:e)) do %>
   <div class="field">
     <%= label_tag :cnpj, 'CNPJ' %><br />

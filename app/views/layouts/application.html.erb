@@ -1,8 +1,9 @@
-<%= content_for :top_sidebar do %>
-  <% if current_empresa %>
+<% if current_empresa %>
+  <%= content_for :top_sidebar do %>
     <div id="login_cnpj">
       <span id="acessando_como">Você está acessando como:</span>
       <span id="empresa_atual"><%= current_empresa.cnpj %></span>
+      <span id="outra_empresa">Esse documento não é seu? <%= link_to 'Acesse sua conta', autenticar_empresas_url %></span>
     </div>
   <% end %>
 <% end %>

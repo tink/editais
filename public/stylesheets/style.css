@@ -102,6 +102,10 @@ a, a:visited {
   margin-bottom: 10px;
 }
 
+#outra_empresa {
+  font-size: 11px;
+}
+
 h1 {
   color: #c4110b;
   font-size: 32px;

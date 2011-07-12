@@ -21,7 +21,7 @@
         <div id="principal" class="<%= local_assigns[:width] || 'split' %>">
           <%= yield %>
         </div>
-        <% if yield(:sidebar).present? || yield(:top_sidebar) %>
+        <% if yield(:sidebar).present? || yield(:top_sidebar).present? %>
           <div id=sidebar>
             <%= yield :top_sidebar %>
             <%= yield :sidebar %>

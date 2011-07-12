@@ -1,20 +1,26 @@
 # encoding: UTF-8
 
 class EmpresasController < ApplicationController
-  before_filter :load_edital
+  before_filter :load_edital, :except => :verificar
+
+  # GET /empresas/autenticar
+  def autenticar
+    session.delete(:empresa_id)
+  end
 
   # POST /empresas/verificar
   def verificar
-    cnpj = params[:cnpj].to_s.gsub(/\D/, '')
-
-    if !Cnpj.new(cnpj).valido?
+    if !Cnpj.new(params[:cnpj]).valido?
       flash[:error] = 'CNPJ informado não é válido'
       redirect_to :action => :autenticar, :e => params[:e]
     else
-      empresa = Empresa.find_by_cnpj(cnpj)
-      if empresa
+      if empresa = Empresa.find_by_cnpj(params[:cnpj])
         liberar_acesso(empresa)
-        redirect_to @edital
+        if params[:e]
+          redirect_to edital_url(params[:e])
+        else
+          redirect_to editais_url
+        end
       else
         redirect_to params.slice(:e, :cnpj).merge(:action => :new)
       end
