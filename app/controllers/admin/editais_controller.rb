@@ -1,4 +1,4 @@
-class Admin::EditaisController < ApplicationController
+class Admin::EditaisController < Admin::BaseController
   # GET /admin/editais
   # GET /admin/editais.xml
   def index

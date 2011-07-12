@@ -1,4 +1,4 @@
-class Admin::DocumentosController < ApplicationController
+class Admin::DocumentosController < Admin::BaseController
   before_filter :load_edital
 
   # GET /admin/documentos/new

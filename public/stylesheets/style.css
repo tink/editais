@@ -57,8 +57,15 @@ p, ol, ul, td {
 
 #principal {
   float: left;
+}
+
+#principal.split {
   width: 65%;
   padding-right: 15px;
+}
+
+#principal.full {
+  width: 100%;
 }
 
 #principal table {

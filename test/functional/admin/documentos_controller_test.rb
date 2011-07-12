@@ -5,6 +5,8 @@ class Admin::DocumentosControllerTest < ActionController::TestCase
     @edital = editais(:one)
     @documento = documentos(:one)
     @documento.update_attribute(:edital_id, @edital.id)
+
+    sign_in :user, users(:one)
   end
 
   test "should get new" do

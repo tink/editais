@@ -12,6 +12,8 @@ Editais::Application.routes.draw do
   resources :downloads, :only => [:create, :show]
 
   devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'acessar', :sign_out => 'sair' }
+  match 'admin' => 'admin/editais#index', :as => :user_root
+
   namespace :admin do
     resources :editais, :path_names => { :new => 'novo', :edit => 'editar' } do
       resources :documentos,

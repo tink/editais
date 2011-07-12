@@ -3,6 +3,8 @@ require 'test_helper'
 class Admin::EditaisControllerTest < ActionController::TestCase
   setup do
     @edital = editais(:one)
+
+    sign_in :user, users(:one)
   end
 
   test "should get index" do
