@@ -6,3 +6,4 @@
 one:
   email: test@test.com.br
   encrypted_password: $2a$10$zHh4hSYs//csgTpfnjSl6uNCYnaw7G3wUnlm18jGBX.FjrHKfRCW. #123456
+  instituicao: one

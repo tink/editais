@@ -2,7 +2,7 @@ class Admin::EditaisController < Admin::BaseController
   # GET /admin/editais
   # GET /admin/editais.xml
   def index
-    @editais = Edital.all
+    @editais = current_instituicao.editais.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admin::EditaisController < Admin::BaseController
   # GET /admin/editais/1
   # GET /admin/editais/1.xml
   def show
-    @edital = Edital.find(params[:id])
+    @edital = current_instituicao.editais.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class Admin::EditaisController < Admin::BaseController
   def new
     @edital = Edital.new
     @edital.documentos.build
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @edital }
@@ -35,13 +35,13 @@ class Admin::EditaisController < Admin::BaseController
 
   # GET /admin/editais/1/admin/edit
   def edit
-    @edital = Edital.find(params[:id])
+    @edital = current_instituicao.editais.find(params[:id])
   end
 
   # POST /admin/editais
   # POST /admin/editais.xml
   def create
-    @edital = Edital.new(params[:edital])
+    @edital = current_instituicao.editais.new(params[:edital])
 
     respond_to do |format|
       if @edital.save
@@ -57,7 +57,7 @@ class Admin::EditaisController < Admin::BaseController
   # PUT /admin/editais/1
   # PUT /admin/editais/1.xml
   def update
-    @edital = Edital.find(params[:id])
+    @edital = current_instituicao.editais.find(params[:id])
 
     respond_to do |format|
       if @edital.update_attributes(params[:edital])
@@ -73,7 +73,7 @@ class Admin::EditaisController < Admin::BaseController
   # DELETE /admin/editais/1
   # DELETE /admin/editais/1.xml
   def destroy
-    @edital = Edital.find(params[:id])
+    @edital = current_instituicao.editais.find(params[:id])
     @edital.destroy
 
     respond_to do |format|

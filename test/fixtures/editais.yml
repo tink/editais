@@ -5,9 +5,11 @@ one:
   resumo: MyText
   data_publicacao: 2011-07-08
   data_limite: 2011-07-08
+  instituicao: one
 
 two:
   nome: MyString
   resumo: MyText
   data_publicacao: 2011-07-08
   data_limite: 2011-07-08
+  instituicao: two
