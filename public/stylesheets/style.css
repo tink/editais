@@ -137,3 +137,7 @@ h1 {
 .clear {
   clear: both;
 }
+
+a.palavra-chave, a.palavra-chave:visited {
+  color: #555;
+}
