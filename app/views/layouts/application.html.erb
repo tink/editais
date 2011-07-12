@@ -28,8 +28,10 @@
         </div>
         <div id=sidebar>
           <% if current_empresa %>
-            <span id="acessando_como">Você está acessando como:</span>
-            <span id="empresa_atual"><%= current_empresa.cnpj %></span>
+            <div id="login_cnpj">
+              <span id="acessando_como">Você está acessando como:</span>
+              <span id="empresa_atual"><%= current_empresa.cnpj %></span>
+            </div>
           <% end %>
           <%= yield :sidebar%>
         </div>
