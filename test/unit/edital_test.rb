@@ -9,4 +9,11 @@ class EditalTest < ActiveSupport::TestCase
 
   should belong_to(:instituicao)
   should have_many(:documentos)
+
+  test "should have tags" do
+    tags = 'test, another_test, another one'
+    edital = Edital.create(:tag_list => tags, :nome => 'Com tags', :resumo => 'resumo', :data_publicacao => Date.today, :data_limite => Date.today, :instituicao_id => instituicoes(:one))
+
+    assert_equal 3, edital.tags.size
+  end
 end

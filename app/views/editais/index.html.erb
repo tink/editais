@@ -12,7 +12,7 @@
   <% @editais.each do |edital| %>
     <li>
       <h2><%= link_to edital.nome, edital %></h2>
-      <p class="date"><%= l edital.data_publicacao %> até <%= l edital.data_limite %></p>
+      <p class="date"><%= l edital.data_publicacao %> até <%= l edital.data_limite %> - <%= edital.tag_list %></p>
       <p class="resumo"><%= edital.resumo %></p>
     </li>
   <% end %>

@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
+gem 'acts-as-taggable-on'
 gem 'brcpfcnpj'
 gem 'carrierwave'
 gem 'devise'

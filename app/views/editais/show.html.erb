@@ -29,8 +29,10 @@
 <% end %>
 
 <h1 id='title'><%= @edital.nome %></h1>
+<div id='palavras-chave'>
+  <span id='palavras-chave-label'>Palavras chave:</span> <%= @edital.tag_list %>
+</div>
 
-<h2 id='subtitle'>Informações</h2>
 <div id='resumo'>
   <%= @edital.resumo %>
 </div>

@@ -177,6 +177,7 @@ pt-BR:
     attributes:
       edital:
         data_publicacao: Data publicação
+        tag_list: Palavras chave
       documento:
         data_publicacao: Data publicação
       empresa:

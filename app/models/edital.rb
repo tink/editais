@@ -4,4 +4,6 @@ class Edital < ActiveRecord::Base
 
   validates_presence_of :nome, :resumo, :data_publicacao, :data_limite, :instituicao_id
   accepts_nested_attributes_for :documentos
+
+  acts_as_taggable
 end
