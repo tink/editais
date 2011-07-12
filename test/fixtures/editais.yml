@@ -2,14 +2,14 @@
 
 one:
   nome: MyString
-  resumo: MyText
+  resumo: Resumo do meu novo edital
   data_publicacao: 2011-07-08
   data_limite: 2011-07-08
   instituicao: one
 
 two:
   nome: MyString
-  resumo: MyText
+  resumo: Resumo do meu outro edital
   data_publicacao: 2011-07-08
   data_limite: 2011-07-08
   instituicao: two

@@ -7,6 +7,8 @@ class EditalTest < ActiveSupport::TestCase
   should validate_presence_of(:data_limite)
   should validate_presence_of(:instituicao_id)
 
+  should ensure_length_of(:resumo).is_at_least(10).is_at_most(250)
+
   should belong_to(:instituicao)
   should have_many(:documentos)
 

@@ -12,6 +12,10 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
+.hint {
+  color: #999999;
+  margin: 0 0 3px;
+}
 #notice {
   color: green;
 }
