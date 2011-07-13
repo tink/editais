@@ -7,8 +7,10 @@ class EditaisControllerTest < ActionController::TestCase
 
   test "should get index" do
     get :index
+
     assert_response :success
-    assert_not_nil assigns(:editais)
+    assert_not_nil assigns(:em_aberto)
+    assert_not_nil assigns(:recentemente_finalizados)
   end
 
   test "should show edital" do

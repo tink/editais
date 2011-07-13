@@ -4,7 +4,8 @@ class EditaisController < ApplicationController
   # GET /editais
   # GET /editais.xml
   def index
-    @editais = Edital.em_aberto
+    @em_aberto = Edital.em_aberto
+    @recentemente_finalizados = Edital.recentemente_finalizados
 
     respond_to do |format|
       format.html # index.html.erb

@@ -29,6 +29,22 @@ class EditalTest < ActiveSupport::TestCase
     assert_equal [edital_um, edital_dois], result
   end
 
+  test "recently finished" do
+    Edital.destroy_all
+
+    edital_em_aberto = create_edital(:data_limite => Date.today)
+
+    finalizados = []
+    11.times do |counter|
+      finalizados << create_edital(:nome => "Finalizado #{counter}", :data_limite => Date.today - (counter + 1).day)
+    end
+
+    result = Edital.recentemente_finalizados
+
+    assert !result.include?(edital_em_aberto), "Should not include an opened edital"
+    assert_equal finalizados[0, 10], result, "Should return only 10 editais"
+  end
+
   def create_edital(attributes = {})
     default_attributes = {:nome => 'Com tags', :resumo => 'resumo do edital', :data_publicacao => Date.today, :data_limite => Date.today, :instituicao_id => instituicoes(:one)}
 

@@ -3,13 +3,22 @@
   margin: 0;
 }
 
+#lista li {
+  border-bottom: 1px solid #CCC;
+}
+
+#lista li.last {
+  border-bottom: none;
+}
+
 h2 {
   font-size: 20px;
   margin: 10px 0 3px;
 }
 
 h2 a, h2 a:visited {
-  color: #379;
+  color: #677A74;
+  font-weight: bold;
   text-decoration: none;
 }
 

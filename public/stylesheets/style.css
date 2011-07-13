@@ -21,7 +21,7 @@ a, a:visited {
 }
 
 #cabecalho {
-  border-bottom: 15px solid #E6E6E6;
+  border-bottom: 15px solid #273427;
 }
 
 #logo img {
@@ -94,20 +94,20 @@ a, a:visited {
 #sidebar {
   background-color: #EEE;
   border-bottom: 2px solid #E6E6E6;
-  border-right: 2px solid #E6E6E6;
   -webkit-border-bottom-right-radius: 10px;
   -webkit-border-bottom-left-radius: 10px;
   -moz-border-radius-bottomright: 10px;
   -moz-border-radius-bottomleft: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  color: black;
   float: right;
   width: 25%;
   padding: 15px 15px 25px;
 }
 
 #login_cnpj {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #677174;
   padding-bottom: 10px;
 }
 
@@ -128,8 +128,13 @@ a, a:visited {
   font-size: 11px;
 }
 
+#outra_empresa a, #outra_empresa a:visited {
+  color: black;
+  font-weight: bold;
+}
+
 h1 {
-  color: #c4110b;
+  color: #D9AA3F;
   font-size: 32px;
   font-weight: bold;
   text-transform: lowercase;
@@ -138,7 +143,7 @@ h1 {
 }
 
 h1 a, h1 a:visited {
-  color: #c4110b;
+  color: inherit;
 }
 
 .flash-notice {
@@ -165,7 +170,7 @@ h1 a, h1 a:visited {
 }
 
 a.palavra-chave, a.palavra-chave:visited {
-  color: #555;
+  color: #2C8B6A;
 }
 
 .actions {

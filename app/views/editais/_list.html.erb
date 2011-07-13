@@ -1,6 +1,6 @@
 <ul id="lista">
-  <% @editais.each do |edital| %>
-    <li>
+  <% local_assigns[:editais].each do |edital| %>
+    <li <%= (edital == local_assigns[:editais].last) ? 'class=last' : '' %>>
       <h2><%= link_to edital.nome, edital %></h2>
       <p class="date"><%= l edital.data_publicacao %> até <%= l edital.data_limite %> - <%= links_to_tags edital.tags %></p>
       <p class="resumo"><%= edital.resumo %></p>

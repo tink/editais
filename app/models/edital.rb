@@ -13,4 +13,8 @@ class Edital < ActiveRecord::Base
   def self.em_aberto
     scoped.where('data_limite >= ?', Date.today)
   end
+
+  def self.recentemente_finalizados
+    scoped.where('data_limite < ?', Date.today).order('data_limite DESC').limit(10)
+  end
 end

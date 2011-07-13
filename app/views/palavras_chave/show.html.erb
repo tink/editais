@@ -2,4 +2,4 @@
 <%= render 'editais/search' %>
 
 <h1>palavras chave / <%= params[:id] %></h1>
-<%= render 'editais/list' %>
+<%= render :partial => 'editais/list', :locals => { :editais => @editais } %>

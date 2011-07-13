@@ -56,7 +56,7 @@ h2#subtitulo {
 }
 
 #files-title {
-  border-bottom: 3px solid #DDD;
+  border-bottom: 3px solid #677174;
   padding-bottom: 5px;
 }
 
@@ -68,7 +68,7 @@ h2#subtitulo {
 
 #files li {
   padding: 5px 0 5px 5px;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #677174;
 }
 
 #files a {

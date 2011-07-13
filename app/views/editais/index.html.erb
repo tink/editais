@@ -1,5 +1,8 @@
 <%= stylesheet_link_tag 'editais/index' %>
 <%= render 'search' %>
 
-<h1>editais em aberto</h1>
-<%= render 'list' %>
+<h1>editais / em aberto</h1>
+<%= render :partial => 'list', :locals => {:editais => @em_aberto} %>
+
+<h1>editais / finalizados recentemente</h1>
+<%= render :partial => 'list', :locals => { :editais => @recentemente_finalizados } %>
