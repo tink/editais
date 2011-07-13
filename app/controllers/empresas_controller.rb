@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 class EmpresasController < ApplicationController
-  before_filter :load_edital, :except => :verificar
+  before_filter :load_edital, :except => [:autenticar, :verificar]
 
   # GET /empresas/autenticar
   def autenticar

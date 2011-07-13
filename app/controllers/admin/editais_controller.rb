@@ -45,7 +45,7 @@ class Admin::EditaisController < Admin::BaseController
 
     respond_to do |format|
       if @edital.save
-        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Edital was successfully created.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Edital criado com sucesso.') }
         format.xml  { render :xml => @edital, :status => :created, :location => @edital }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Admin::EditaisController < Admin::BaseController
 
     respond_to do |format|
       if @edital.update_attributes(params[:edital])
-        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Edital was successfully updated.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Edital atualizado com sucesso') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

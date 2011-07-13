@@ -15,10 +15,10 @@
         </div>
       </div>
       <div id=corpo>
-        <div id=flashes>
-          <%= flash_message %>
-        </div>
         <div id="principal" class="<%= local_assigns[:width] || 'split' %>">
+          <div id=flashes>
+            <%= flash_message %>
+          </div>
           <%= yield %>
         </div>
         <% if yield(:sidebar).present? || yield(:top_sidebar).present? %>

@@ -24,7 +24,7 @@ class Admin::DocumentosController < Admin::BaseController
 
     respond_to do |format|
       if @documento.save
-        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Documento was successfully created.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Arquivo criado com sucesso') }
         format.xml  { render :xml => @documento, :status => :created, :location => @documento }
       else
         format.html { render :action => "new" }
@@ -40,7 +40,7 @@ class Admin::DocumentosController < Admin::BaseController
 
     respond_to do |format|
       if @documento.update_attributes(params[:documento])
-        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Documento was successfully updated.') }
+        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Arquivo atualizado com sucesso') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
