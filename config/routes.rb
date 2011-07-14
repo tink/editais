@@ -23,6 +23,8 @@ Editais::Application.routes.draw do
         :only => [:new, :edit, :create, :update, :destroy],
         :path_names => { :new => 'novo', :edit => 'editar'}
     end
+      
+    match "relatorios/downloads_por_edital/:id" => 'relatorios#downloads_por_edital', :as => :relatorio_downloads_por_edital
   end
 
   # The priority is based upon order of creation:

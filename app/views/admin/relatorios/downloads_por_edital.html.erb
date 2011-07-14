@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag 'relatorios/style' %>
+<h1>Relatórios / Downloads por edital</h1>
+
+<dl id="details">
+  <dt>Edital:</dt>
+  <dd><%= @edital.nome %></dd>
+  <dt>Data de publicação:</dt>
+  <dd><%= l @edital.data_publicacao %></dd>
+  <dt>Data limite:</dt>
+  <dd><%= l @edital.data_limite %></dd>
+</dl>
+
+<h2>Resumo</h2>
+<table id="resumo_downloads">
+  <thead>
+    <tr>
+      <th class='nome_do_arquivo'>Arquivo</th>
+      <th class='quantidade_de_downloads'>Downloads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumo_downloads.each do |resumo| %>
+      <tr>
+        <td><%= resumo.nome_documento %></td>
+        <td class='quantidade'><%= resumo.quantidade_de_downloads.to_i %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td class='total'>TOTAL</td>
+      <td class='quantidade'><%= @resumo_downloads.all.sum(&:quantidade_de_downloads).to_i %></td>
+    </tr>
+  </tbody>
+</table>

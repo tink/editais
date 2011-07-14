@@ -41,4 +41,5 @@
 
 <%= link_to 'Adicionar novo arquivo', new_admin_edital_documento_path(@edital) %> |
 <%= link_to t('navigation.edit'), edit_admin_edital_path(@edital) %> |
+<%= link_to 'Ver todos os downloads para este edital', admin_relatorio_downloads_por_edital_url(@edital.id) %> |
 <%= link_to t('navigation.back'), admin_editais_path %>

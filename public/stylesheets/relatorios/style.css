@@ -1,0 +1,37 @@
+dt {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #555;
+  font-size: 14px;
+  padding: 10px 8px;
+}
+
+table td {
+  border-bottom: 1px solid #777;
+}
+
+table th {
+  border-bottom: 2px solid #555;
+  font-weight: bold;
+  text-align: left;
+}
+
+.total {
+  font-weight: bold;
+  text-align: right;
+}
+
+.quantidade {
+  text-align: right;
+}
+
+#resumo_downloads .nome_do_arquivo {
+  width: 85%;
+}
