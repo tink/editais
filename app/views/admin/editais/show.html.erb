@@ -1,32 +1,17 @@
-<p>
-  <b>Nome:</b>
-  <%= @edital.nome %>
-</p>
+<h1> <%= link_to 'Editais', admin_editais_url %> / <%= @edital.nome %> </h1>
 
-<p>
-  <b>Resumo:</b>
-  <%= @edital.resumo %>
-</p>
-
-<p>
-  <b>Palavras chave:</b>
-  <%= @edital.tag_list %>
-</p>
-
-<p>
-  <b>Site:</b>
-  <%= link_to @edital.site, @edital.site %>
-</p>
-
-<p>
-  <b>Data publicação:</b>
-  <%= l @edital.data_publicacao %>
-</p>
-
-<p>
-  <b>Data limite:</b>
-  <%= l @edital.data_limite %>
-</p>
+<dl>
+  <dt>Resumo:</dt>
+  <dd><%= @edital.resumo %></dd>
+  <dt>Palavras chave:</dt>
+  <dd><%= @edital.tag_list %></dd>
+  <dt>Site:</dt>
+  <dd><%= @edital.site %></dd>
+  <dt>Data de publicação:</dt>
+  <dd><%= l @edital.data_publicacao %></dd>
+  <dt>Data limite:</dt>
+  <dd><%= l @edital.data_limite %></dd>
+</dl>
 
 <p>
   <b>Arquivos</b>

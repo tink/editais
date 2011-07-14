@@ -1,25 +1,24 @@
+<%= stylesheet_link_tag 'admin/editais/index', :media => "all" %>
 <h1>Editais</h1>
 
-<table>
+<table id="editais">
   <tr>
-    <th>Nome</th>
-    <th>Resumo</th>
+    <th class='nome'>Nome</th>
     <th>Data publicação</th>
     <th>Data limite</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @editais.each do |edital| %>
   <tr>
     <td><%= edital.nome %></td>
-    <td><%= edital.resumo %></td>
     <td><%= l edital.data_publicacao %></td>
     <td><%= l edital.data_limite %></td>
-    <td><%= link_to t('navigation.show'), admin_edital_path(edital) %></td>
-    <td><%= link_to t('navigation.edit'), edit_admin_edital_path(edital) %></td>
-    <td><%= link_to t('navigation.destroy'), admin_edital_path(edital), :confirm => t('navigation.confirm'), :method => :delete %></td>
+    <td>
+      <%= link_to t('navigation.show'), admin_edital_path(edital) %>
+      <%= link_to t('navigation.edit'), edit_admin_edital_path(edital) %>
+      <%= link_to t('navigation.destroy'), admin_edital_path(edital), :confirm => t('navigation.confirm'), :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
