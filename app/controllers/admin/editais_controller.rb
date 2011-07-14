@@ -1,4 +1,6 @@
 class Admin::EditaisController < Admin::BaseController
+  set_tab :editais
+
   # GET /admin/editais
   # GET /admin/editais.xml
   def index

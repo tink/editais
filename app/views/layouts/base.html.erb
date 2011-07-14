@@ -14,6 +14,11 @@
           <%= link_to raw(image_tag('logo.png', :alt => 'Editais Públicos')), root_url %>
         </div>
       </div>
+      <% if yield(:menu) %>
+        <div id=menu>
+          <%= yield(:menu) %>
+        </div>
+      <% end %>
       <div id=corpo>
         <div id="principal" class="<%= local_assigns[:width] || 'split' %>">
           <div id=flashes>

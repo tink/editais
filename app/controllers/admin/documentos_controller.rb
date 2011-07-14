@@ -1,4 +1,6 @@
 class Admin::DocumentosController < Admin::BaseController
+  set_tabs :editais
+
   before_filter :load_edital
 
   # GET /admin/documentos/new

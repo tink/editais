@@ -15,18 +15,42 @@ a, a:visited {
 }
 
 #main {
-  width: 100%;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #cabecalho {
   border-bottom: 15px solid #E6E6E6;
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
 }
 
 #logo img {
   margin: 25px 0;
+}
+
+#menu ul {
+  border-bottom: 1px solid #CCC;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  border-right: 1px solid #DDD;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+#menu li:hover {
+  background-color: #F1F1F1;
+}
+
+#menu li.current {
+  background-color: #F1F1F1;
+}
+
+#menu a {
+  text-decoration: none;
 }
 
 #rodape {
@@ -36,7 +60,6 @@ a, a:visited {
   text-align: center;
   margin: 50px auto 0;
   padding: 10px 0;
-  width: 960px;
 }
 #slogan {
   float: right;
@@ -48,7 +71,6 @@ a, a:visited {
 #corpo {
   margin-left: auto;
   margin-right: auto;
-  width: 960px;
   clear: left;
 }
 
