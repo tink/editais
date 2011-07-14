@@ -31,3 +31,32 @@
     </tr>
   </tbody>
 </table>
+
+<h2>Empresas que baixaram este edital</h2>
+<table id="empresas">
+  <thead>
+    <tr>
+      <th class='cnpj'>CNPJ</th>
+      <th class='razao_social'>Empresa</th>
+      <th class='email'>E-mail</th>
+      <th class='telefones'>Telefones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @empresas.each do |empresa| %>
+      <tr>
+        <td><%= empresa.cnpj %></td>
+        <td><%= empresa.razao_social %></td>
+        <td><%= empresa.email %></td>
+        <td>
+          <%= empresa.telefone_1 %>
+          <% if empresa.telefone_2.present? %>
+            / <%= empresa.telefone_2 %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('navigation.back'), admin_edital_url(@edital) %>

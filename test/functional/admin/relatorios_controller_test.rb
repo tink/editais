@@ -13,5 +13,6 @@ class Admin::RelatoriosControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal @edital, assigns(:edital)
     assert assigns(:resumo_downloads)
+    assert assigns(:empresas)
   end
 end
