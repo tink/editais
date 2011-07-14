@@ -1,7 +1,8 @@
+<%= javascript_include_tag 'editais/form' %>
 <%= form_for([:admin, @edital]) do |f| %>
   <% if @edital.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@edital.errors.count, "error") %> prohibited this edital from being saved:</h2>
+      <h2>Foram encontrados os seguintes erros ao tentar salvar o edital:</h2>
 
       <ul>
       <% @edital.errors.full_messages.each do |msg| %>
@@ -12,24 +13,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br />
+    <%= f.label :nome %>
     <%= f.text_field :nome %>
   </div>
   <div class="field">
-    <%= f.label :resumo %><br />
+    <%= f.label :resumo %>
+    <p class='hint'>Deve contem no máximo 250 caracteres</p>
     <%= f.text_area :resumo, :cols => 50, :rows => 6 %>
   </div>
   <div class="field">
-    <%= f.label :tag_list %><br />
+    <%= f.label :tag_list %>
     <p class='hint'>Palavras chave devem ser separadas por vírgula</p>
     <%= f.text_field :tag_list %>
   </div>
   <div class="field">
-    <%= f.label :data_publicacao %><br />
+    <%= f.label :site %>
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :data_publicacao %>
     <%= f.date_select :data_publicacao %>
   </div>
   <div class="field">
-    <%= f.label :data_limite %><br />
+    <%= f.label :data_limite %>
     <%= f.date_select :data_limite %>
   </div>
 

@@ -6,6 +6,11 @@
   <h3>Data limite</h3>
   <span class="date"><%= l @edital.data_limite %></span>
 
+  <% if @edital.site %>
+    <h3>Site</h3>
+    <span class="site"><%= link_to limit_to(@edital.site, 30), @edital.site %></span>
+  <% end %>
+
   <h3 id="files-title">Arquivos</h3>
   <ul id="files">
   <% if @edital.documentos.empty? %>

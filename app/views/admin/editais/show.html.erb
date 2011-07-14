@@ -9,6 +9,16 @@
 </p>
 
 <p>
+  <b>Palavras chave:</b>
+  <%= @edital.tag_list %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= link_to @edital.site, @edital.site %>
+</p>
+
+<p>
   <b>Data publicação:</b>
   <%= l @edital.data_publicacao %>
 </p>

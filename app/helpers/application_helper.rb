@@ -8,4 +8,12 @@ module ApplicationHelper
     end
     messages
   end
+
+  def limit_to(string, max_chars)
+    if string.size > max_chars
+      string[0, max_chars] << '...'
+    else
+      string
+    end
+  end
 end

@@ -1,7 +1,7 @@
 <%= form_for([:admin, @edital, @documento], :html => {:multipart => true}) do |f| %>
   <% if @documento.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+      <h2>Foram encontrados os seguintes erros ao tentar salvar o documento:</h2>
 
       <ul>
       <% @documento.errors.full_messages.each do |msg| %>
@@ -13,15 +13,15 @@
 
   <%= f.hidden_field :edital_id %>
   <div class="field">
-    <%= f.label :nome %><br />
+    <%= f.label :nome %>
     <%= f.text_field :nome %>
   </div>
   <div class="field">
-    <%= f.label :data_publicacao %><br />
+    <%= f.label :data_publicacao %>
     <%= f.date_select :data_publicacao %>
   </div>
   <div class="field">
-    <%= f.label :arquivo %><br />
+    <%= f.label :arquivo %>
     <%= f.file_field :arquivo %>
     <%= f.hidden_field :arquivo_cache %>
   </div>

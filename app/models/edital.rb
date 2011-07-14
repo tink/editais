@@ -4,6 +4,8 @@ class Edital < ActiveRecord::Base
 
   validates_presence_of :nome, :resumo, :data_publicacao, :data_limite, :instituicao_id
   validates_length_of :resumo, :within => 10..250
+  validates_format_of :site, :with => URI::regexp(%w(http https)), :allow_blank => true
+
   accepts_nested_attributes_for :documentos
 
   acts_as_taggable
