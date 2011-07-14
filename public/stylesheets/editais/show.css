@@ -30,6 +30,19 @@ h2#subtitulo {
   margin-top: 20px;
 }
 
+#resumo * {
+  color: #333 !important;
+}
+
+#resumo table {
+  border-collapse: collapse;
+}
+
+#resumo table td, #resumo table th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
 #sidebar h3 {
   font-weight: bold;
   font-size: 15px;

@@ -16,4 +16,10 @@ module ApplicationHelper
       string
     end
   end
+
+  def wysiwyg_include_tag
+    html = javascript_include_tag('jquery.wysiwyg', 'jquery.wysiwyg.link', 'jquery.wysiwyg.table')
+    html += stylesheet_link_tag('jquery.wysiwyg.modal', 'jquery.wysiwyg.old-school')
+    raw(html)
+  end
 end

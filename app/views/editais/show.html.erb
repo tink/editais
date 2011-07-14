@@ -39,5 +39,9 @@
 </div>
 
 <div id='resumo'>
-  <%= @edital.resumo %>
+  <% if @edital.descricao.present? %>
+    <%= raw(@edital.descricao) %>
+  <% else %>
+    <%= @edital.resumo %>
+  <% end %>
 </div>

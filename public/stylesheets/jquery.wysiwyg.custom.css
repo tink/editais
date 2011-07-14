@@ -1,0 +1,14 @@
+body {
+  color: #333;
+  font-family: "Trebuchet MS", Helvetica, "Bitstream Vera Sans", Verdana, sans-serif;
+  font-size: 80%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table td, table th {
+  border: 1px solid black;
+  padding: 5px;
+}
