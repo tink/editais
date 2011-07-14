@@ -5,6 +5,7 @@ class Download < ActiveRecord::Base
   validates_presence_of :empresa_id, :documento_id
   validates :token, :presence => true, :uniqueness => true
 
+  after_create :send_notification
   before_validation :generate_uniq_token, :on => :create
 
   def complete!
@@ -15,6 +16,10 @@ class Download < ActiveRecord::Base
     while token.blank? || Download.find_by_token(token)
       try_another_token
     end
+  end
+
+  def send_notification
+    DownloadNotifier.ready_download(self).deliver!
   end
 
   protected
