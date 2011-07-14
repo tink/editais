@@ -1,5 +1,5 @@
 class Admin::DocumentosController < Admin::BaseController
-  set_tabs :editais
+  set_tab :editais
 
   before_filter :load_edital
 

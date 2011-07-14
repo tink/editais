@@ -1,7 +1,7 @@
 <%= content_for :menu do %>
   <%= tabs_tag do |tab| %>
-    <%= tab.editais   'Editais', user_root_path %>
-    <%= tab.dashboard 'Relatórios', user_root_path %>
+    <%= tab.editais    'Editais', user_root_path %>
+    <%= tab.relatorios 'Relatórios', user_root_path %>
   <% end %>
 <% end %>
 <%= render :template => 'layouts/base', :locals => {:width => 'full'} %>
