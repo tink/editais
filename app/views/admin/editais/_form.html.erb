@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'editais/form' %>
+<%= javascript_include_tag 'jquery.limit', 'editais/form' %>
 <%= form_for([:admin, @edital]) do |f| %>
   <% if @edital.errors.any? %>
     <div id="error_explanation">
@@ -18,9 +18,10 @@
   </div>
   <div class="field">
     <%= f.label :resumo %>
-    <p class='hint'>Deve contem no máximo 250 caracteres</p>
+    <p class='hint'>Deve contem entre 10 e 250 caracteres. Restam <span id="charsLeft"></span> caracteres.
+</p>
     <%= f.text_area :resumo, :cols => 50, :rows => 6 %>
-  </div>
+      </div>
   <div class="field">
     <%= f.label :tag_list %>
     <p class='hint'>Palavras chave devem ser separadas por vírgula</p>

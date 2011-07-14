@@ -20,6 +20,11 @@ label {
   color: #999999;
   margin: 0 0 3px;
 }
+
+#charsLeft {
+  font-weight: bold;
+}
+
 #notice {
   color: green;
 }
