@@ -1,5 +1,5 @@
-<h1>Novo documento</h1>
+<h1><%= link_to('editais', admin_editais_url) %> / <%= link_to @edital.nome, admin_edital_url(@edital) %> / Novo arquivo</h1>
 
 <%= render 'form' %>
 
-<%= link_to t('navigation.back'), admin_edital_path(@edital) %>
+<%= link_to t('navigation.back') + ' para edital', admin_edital_path(@edital) %>

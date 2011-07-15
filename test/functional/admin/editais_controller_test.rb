@@ -24,7 +24,8 @@ class Admin::EditaisControllerTest < ActionController::TestCase
       post :create, :edital => @edital.attributes
     end
 
-    assert_redirected_to admin_edital_path(assigns(:edital))
+    assert_equal 'Edital criado com sucesso. Adicione agora o primeiro arquivo referente a este edital.', flash[:notice]
+    assert_redirected_to new_admin_edital_documento_path(:edital_id => assigns(:edital).id)
   end
 
   test "should show edital" do

@@ -1,0 +1,30 @@
+#files {
+  margin: 0;
+  padding: 0;
+}
+
+#files-title {
+  border-bottom: 3px solid #677174;
+  padding-bottom: 5px;
+}
+
+#files .image-box {
+  float: left;
+  width: 25px;
+  padding-top: 6px;
+}
+
+#files li {
+  padding: 5px 0 5px 5px;
+}
+
+#files a {
+  border: 0;
+  color: #379;
+}
+
+#files .date {
+  font-size: 10px;
+  margin: 0;
+}
+

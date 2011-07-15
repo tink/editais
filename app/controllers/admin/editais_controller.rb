@@ -47,7 +47,7 @@ class Admin::EditaisController < Admin::BaseController
 
     respond_to do |format|
       if @edital.save
-        format.html { redirect_to(admin_edital_url(@edital), :notice => 'Edital criado com sucesso.') }
+        format.html { redirect_to(new_admin_edital_documento_path(@edital), :notice => 'Edital criado com sucesso. Adicione agora o primeiro arquivo referente a este edital.') }
         format.xml  { render :xml => @edital, :status => :created, :location => @edital }
       else
         format.html { render :action => "new" }

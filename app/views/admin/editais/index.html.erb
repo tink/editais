@@ -4,8 +4,8 @@
 <table id="editais">
   <tr>
     <th class='nome'>Nome</th>
-    <th>Data publicação</th>
-    <th>Data limite</th>
+    <th class='data'>Data publicação</th>
+    <th class='data'>Data limite</th>
     <th></th>
   </tr>
 
@@ -21,9 +21,13 @@
     </td>
   </tr>
 <% end %>
-</table>
 
-<%= paginate @editais %>
+<% if @editais.empty? %>
+  <tr>
+    <td colspan='4'>Nenhum edital encontrado</td>
+  </tr>
+<% end %>
+</table>
 
 <br />
 

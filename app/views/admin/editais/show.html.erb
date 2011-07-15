@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'admin/editais/show' %>
 <h1> <%= link_to 'Editais', admin_editais_url %> / <%= @edital.nome %> </h1>
 
 <dl>
@@ -11,18 +12,33 @@
   <dd><%= l @edital.data_publicacao %></dd>
   <dt>Data limite:</dt>
   <dd><%= l @edital.data_limite %></dd>
+  <dt>Arquivos:</dt>
+  <dd>
+    <ul id="files">
+    <% if @edital.documentos.empty? %>
+      <li>
+        Nenhum arquivo ainda enviado
+      </li>
+    <% else %>
+      <% @edital.documentos.each do |documento| %>
+        <li>
+          <div class="image-box">
+            <%= image_tag 'icons/document-invoice.png' %>
+          </div>
+          <div class="description-box">
+            <div class='file-details'>
+              <span class='file-name'><%= documento.nome %></span> - 
+              <%= link_to 'Editar', edit_admin_edital_documento_url(@edital, documento) %> |
+              <%= link_to 'Baixar', documento.arquivo.url %>
+            </div>
+            <span class='date'><%= l(documento.data_publicacao) %></span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </dd>
 </dl>
-
-<p>
-  <b>Arquivos</b>
-  <ul>
-  <% @edital.documentos.each do |documento| %>
-    <li>
-      <%= link_to documento.nome, documento.arquivo.url %> - <%= documento.data_publicacao %>
-    </li>
-  <% end %>
-  </ul>
-</p>
 
 <%= link_to 'Adicionar novo arquivo', new_admin_edital_documento_path(@edital) %> |
 <%= link_to t('navigation.edit'), edit_admin_edital_path(@edital) %> |

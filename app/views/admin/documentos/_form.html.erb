@@ -17,13 +17,13 @@
     <%= f.text_field :nome %>
   </div>
   <div class="field">
-    <%= f.label :data_publicacao %>
-    <%= f.date_select :data_publicacao %>
-  </div>
-  <div class="field">
     <%= f.label :arquivo %>
     <%= f.file_field :arquivo %>
     <%= f.hidden_field :arquivo_cache %>
+  </div>
+  <div class="field">
+    <%= f.label :data_publicacao %>
+    <%= f.date_select :data_publicacao %>
   </div>
   <div class="actions">
     <%= f.submit %>
