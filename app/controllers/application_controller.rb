@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordInvalid, :with => :render_404
+  rescue_from ActionController::RoutingError, :with => :render_404
+  rescue_from ActionController::UnknownAction, :with => :render_404
+
   helper_method :current_empresa
 
   protect_from_forgery
@@ -7,14 +11,6 @@ class ApplicationController < ActionController::Base
   def current_empresa
     if session[:empresa_id]
       @empresa ||= Empresa.find(session[:empresa_id])
-    end
-  end
-
-  def render_optional_error_file(status_code)
-    if status_code == :not_found
-      render_404
-    else
-      super
     end
   end
 
