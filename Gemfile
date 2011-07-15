@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'jquery-rails', '>= 1.0.12'
 gem 'tabs_on_rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'mysql2', '~> 0.2.6'

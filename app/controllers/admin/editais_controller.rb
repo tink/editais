@@ -4,7 +4,7 @@ class Admin::EditaisController < Admin::BaseController
   # GET /admin/editais
   # GET /admin/editais.xml
   def index
-    @editais = current_instituicao.editais.all
+    @editais = current_instituicao.editais.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

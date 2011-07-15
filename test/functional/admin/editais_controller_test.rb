@@ -11,6 +11,7 @@ class Admin::EditaisControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:editais)
+    assert_respond_to assigns(:editais), :current_page
   end
 
   test "should get new" do

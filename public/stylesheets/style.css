@@ -202,3 +202,22 @@ dt {
 dd {
   margin-bottom: 10px;
 }
+
+.pagination {
+  font-size: 12px;
+  margin: 5px 0;
+  text-align: right;
+}
+
+.pagination span {
+  border-right: 1px solid #CCC;
+  padding: 0 5px;
+}
+
+.pagination .last {
+  border: 0;
+}
+
+.pagination a:visited {
+  color: inherit;
+}
