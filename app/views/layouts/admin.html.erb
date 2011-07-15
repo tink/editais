@@ -2,6 +2,7 @@
   <%= tabs_tag do |tab| %>
     <%= tab.editais    'Editais', user_root_path %>
     <%= tab.relatorios 'Relatórios', user_root_path %>
+    <%= tab.sair       'Sair', destroy_user_session_url %>
   <% end %>
 <% end %>
 <%= render :template => 'layouts/base', :locals => {:width => 'full'} %>
