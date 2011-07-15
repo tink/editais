@@ -8,6 +8,8 @@
   <dd><%= l @edital.data_publicacao %></dd>
   <dt>Data limite:</dt>
   <dd><%= l @edital.data_limite %></dd>
+  <dt>Data atual:</dt>
+  <dd><%= l Time.now %></dd>
 </dl>
 
 <h2>Resumo</h2>
@@ -25,10 +27,16 @@
         <td class='quantidade'><%= resumo.quantidade_de_downloads.to_i %></td>
       </tr>
     <% end %>
-    <tr>
-      <td class='total'>TOTAL</td>
-      <td class='quantidade'><%= @resumo_downloads.all.sum(&:quantidade_de_downloads).to_i %></td>
-    </tr>
+    <% if @resumo_downloads.empty? %>
+      <tr>
+        <td colspan='2'>Não existe nenhum arquivo para download</td>
+      </tr>
+    <% else %>
+      <tr>
+        <td class='total'>TOTAL</td>
+        <td class='quantidade'><%= @resumo_downloads.all.sum(&:quantidade_de_downloads).to_i %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
@@ -56,9 +64,14 @@
         </td>
       </tr>
     <% end %>
+    <% if @empresas.empty? %>
+      <tr>
+        <td colspan='4'>Nenhuma empresa baixou este edital até este momento</td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
 <div class='actions'>
-  <%= link_to t('navigation.back'), admin_edital_url(@edital) %>
+  <%= link_to t('navigation.back') + ' para edital', admin_edital_url(@edital) %>
 </div>

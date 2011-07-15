@@ -1,5 +1,5 @@
 class Admin::RelatoriosController < Admin::BaseController
-  set_tab :relatorios
+  set_tab :editais
 
   def downloads_por_edital
     @edital = current_instituicao.editais.find(params[:id])
