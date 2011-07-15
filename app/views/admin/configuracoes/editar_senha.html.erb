@@ -1,0 +1,32 @@
+<h1>Alterar senha</h1>
+<%= form_for(current_user, :url => admin_alterar_senha_url, :html => { :method => :put }) do |f| %>
+  <% if current_user.errors.any? %>
+    <div id="error_explanation">
+      <h2>Foram encontrados os seguintes erros ao tentar alterar a senha:</h2>
+
+      <ul>
+      <% current_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field by-side">
+    <%= f.label :current_password, nil, class: 'fixed-width by-side' %>
+    <%= f.password_field :current_password, class: 'small' %>
+  </div>
+
+  <div class="field by-side">
+    <%= f.label :password, nil, class: 'fixed-width by-side' %>
+    <%= f.password_field :password, class: 'small' %>
+  </div>
+
+  <div class="field by-side">
+    <%= f.label :password_confirmation, nil, class: 'fixed-width by-side' %>
+    <%= f.password_field :password_confirmation, class: 'small' %>
+  </div>
+
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>

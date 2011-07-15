@@ -189,7 +189,9 @@ pt-BR:
         endereco: Endereço
       user:
         email: E-mail
+        current_password: Senha atual
         password: Senha
+        password_confirmation: Senha de confirmação
     errors:
       template:
         header:
