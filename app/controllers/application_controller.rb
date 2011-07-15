@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def render_optional_error_file(status_code)
+    if status_code == :not_found
+      render_404
+    else
+      super
+    end
+  end
+
   def render_404
     respond_to do |type| 
       type.html { render :template => "errors/404", :layout => 'base', :status => 404 } 
