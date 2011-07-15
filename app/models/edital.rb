@@ -9,4 +9,8 @@ class Edital < ActiveRecord::Base
   accepts_nested_attributes_for :documentos
 
   acts_as_taggable
+
+  def self.em_aberto
+    scoped.where('data_limite >= ?', Date.today)
+  end
 end
