@@ -137,6 +137,10 @@ h1 {
   padding-bottom: 5px;
 }
 
+h1 a, h1 a:visited {
+  color: #c4110b;
+}
+
 .flash-notice {
   color: #6d9100;
   padding: 0.7em 1em;
@@ -189,4 +193,12 @@ table th {
   font-size: 14px;
   text-align: left;
   vertical-align: middle;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 10px;
 }
