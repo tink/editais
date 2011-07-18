@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'maskedinput-1.1.2.pack', 'empresas/create' %>
+<%= javascript_include_tag 'jquery.maskedinput-1.3.min', 'empresas/create' %>
 
 <%= form_for(@empresa) do |f| %>
   <%= hidden_field_tag :e, params[:e] %>
@@ -15,31 +15,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :razao_social %><br />
+    <%= f.label :razao_social %>
     <%= f.text_field :razao_social %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :telefone_1 %><br />
+    <%= f.label :telefone_1 %>
     <%= f.text_field :telefone_1 %>
   </div>
   <div class="field">
-    <%= f.label :telefone_2 %><br />
+    <%= f.label :telefone_2 %>
     <%= f.text_field :telefone_2 %>
   </div>
   <div class="field">
-    <%= f.label :endereco %><br />
+    <%= f.label :endereco %>
     <%= f.text_field :endereco %>
   </div>
   <div class="field">
-    <%= f.label :responsavel %><br />
+    <%= f.label :responsavel %>
     <%= f.text_field :responsavel %>
   </div>
   <div class="field">
-    <%= f.label :cnpj %><br />
+    <%= f.label :cnpj %>
     <%= f.text_field :cnpj %>
   </div>
   <div class="actions">
