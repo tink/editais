@@ -1,8 +1,8 @@
 <%= content_for :sidebar do %>
   <div id="busca">
     <h2>Buscar editais</h2>
-    <%= form_tag({}) do %>
-      <%= text_field_tag :q %>
+    <%= form_tag(buscar_editais_url, :method => :get) do %>
+      <%= text_field_tag :q, params[:q] %>
       <%= submit_tag 'Buscar' %>
     <% end %>
   </div>

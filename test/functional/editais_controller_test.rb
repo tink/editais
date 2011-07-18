@@ -13,6 +13,13 @@ class EditaisControllerTest < ActionController::TestCase
     assert_not_nil assigns(:recentemente_finalizados)
   end
 
+  test "should get buscar" do
+    get :buscar
+
+    assert_response :success
+    assert_not_nil assigns(:editais)
+  end
+
   test "should show edital" do
     get :show, {:id => @edital.to_param}, {:empresa_id => empresas(:one)}
     assert_response :success

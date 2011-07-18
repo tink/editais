@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'test_helper'
 
 class EditalTest < ActiveSupport::TestCase
@@ -45,6 +46,26 @@ class EditalTest < ActiveSupport::TestCase
     assert_equal finalizados[0, 10], result, "Should return only 10 editais"
   end
 
+  test "should search by part of resumo" do
+    expected = create_edital(:resumo => 'Um texto qualquer para o resumo')
+    assert_equal [expected], Edital.search(:q => 'qual')
+  end
+
+  test "should search by part of description" do
+    expected = create_edital(:descricao => 'Uma descrição sobre o edital')
+    assert_equal [expected], Edital.search(:q => 'escriçã')
+  end
+
+  test "should search by part of nome" do
+    expected = create_edital(:nome => 'Edital de abertura da petrobras')
+    assert_equal [expected], Edital.search(:q => 'bertur')
+  end
+
+  test "should paginate search" do
+    assert_respond_to Edital.search, :current_page
+  end
+
+  protected
   def create_edital(attributes = {})
     default_attributes = {:nome => 'Com tags', :resumo => 'resumo do edital', :data_publicacao => Date.today, :data_limite => Date.today, :instituicao_id => instituicoes(:one)}
 

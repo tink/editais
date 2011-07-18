@@ -1,7 +1,12 @@
 Editais::Application.routes.draw do
   root :to => "editais#index"
 
-  resources :editais, :only => [:index, :show]
+  resources :editais, :only => [:index, :show] do
+    collection do
+      get :buscar
+    end
+  end
+
   resources :downloads, :only => [:create, :show]
   resources :palavras_chave, :only => :show
   resources :empresas, :only => [:new, :create], :path_names => { :new => 'nova' } do

@@ -1,0 +1,5 @@
+<%= stylesheet_link_tag 'editais/index' %>
+<%= render 'search' %>
+
+<h1>editais / buscar / <%= params[:q] %></h1>
+<%= render :partial => 'list', :locals => {:editais => @editais} %>

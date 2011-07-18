@@ -9,6 +9,15 @@ class EditaisController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml  { render :xml => @em_aberto }
+    end
+  end
+
+  def buscar
+    @editais = Edital.search(params.slice(:q, :page))
+
+    respond_to do |format|
+      format.html # search.html.erb
       format.xml  { render :xml => @editais }
     end
   end

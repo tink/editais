@@ -17,4 +17,12 @@ class Edital < ActiveRecord::Base
   def self.recentemente_finalizados
     scoped.where('data_limite < ?', Date.today).order('data_limite DESC').limit(10)
   end
+
+  def self.search(options = {})
+    result = scoped.page(options[:page])
+    if options[:q]
+      result = result.where("resumo LIKE :pattern OR descricao LIKE :pattern OR nome LIKE :pattern", :pattern => "%#{options[:q]}%")
+    end
+    result
+  end
 end
