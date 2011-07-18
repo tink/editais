@@ -4,7 +4,11 @@ class DownloadsController < ApplicationController
   def show
     @download = Download.find_by_token(params[:id])
     @download.complete!
-    send_file(@download.documento.arquivo.path)
+    if CarrierWave.configure(&:storage) == CarrierWave::Storage::S3
+      redirect_to @download.documento.arquivo.url
+    else
+      send_file(@download.documento.arquivo.path)
+    end
   end
 
   # POST /downloads
