@@ -8,7 +8,7 @@ class Documento < ActiveRecord::Base
 
   def self.downloads_by_edital(edital)
     summary = scoped
-    summary = summary.select('documentos.nome as nome_documento, SUM( IF(downloads.completed, 1, 0) )  as quantidade_de_downloads')
+    summary = summary.select('documentos.nome as nome_documento, SUM( CASE downloads.completed WHEN TRUE THEN 1 ELSE 0 END ) as quantidade_de_downloads')
     summary = summary.joins('LEFT JOIN downloads ON documentos.id = downloads.documento_id')
     summary = summary.where(:edital_id => edital.id)
     summary = summary.group('nome_documento')

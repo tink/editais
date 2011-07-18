@@ -34,13 +34,13 @@ class DocumentoTest < ActiveSupport::TestCase
     result = Documento.downloads_by_edital(edital)
     
     assert_equal 'Test 1', result.first.nome_documento
-    assert_equal 1, result.first.quantidade_de_downloads
+    assert_equal 1, result.first.quantidade_de_downloads.to_i
 
     assert_equal 'Test 2', result.second.nome_documento
-    assert_equal 2, result.second.quantidade_de_downloads
+    assert_equal 2, result.second.quantidade_de_downloads.to_i
 
     assert_equal 'Test 3', result.third.nome_documento
-    assert_equal 0, result.third.quantidade_de_downloads
+    assert_equal 0, result.third.quantidade_de_downloads.to_i
 
     assert_equal 3, result.all.size
   end
