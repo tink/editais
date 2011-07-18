@@ -1,5 +1,10 @@
 <%= stylesheet_link_tag 'editais/index' %>
 <%= render 'search' %>
 
-<h1>editais / buscar / <%= params[:q] %></h1>
-<%= render :partial => 'list', :locals => {:editais => @editais} %>
+<h1><%= link_to 'editais', editais_url %> / buscar / <%= params[:q] %></h1>
+<% if @editais.present? %>
+  <%= render :partial => 'list', :locals => {:editais => @editais} %>
+  <%= paginate @editais %>
+<% else %>
+  <p>Nenhum edital encontrado para a busca atual. Clique <%= link_to 'aqui', editais_url %> para voltar a página inicial ou faça outra busca ao lado.</p>
+<% end %>
